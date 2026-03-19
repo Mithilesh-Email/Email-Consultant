@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Deliverability - Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c3e50;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1.2rem;
+            transition: background 0.3s;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background: #3498db;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section:first-of-type {
+            padding-top: 120px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3498db;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 1rem 0 0.5rem;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 4rem;
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        /* Cards */
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-header h3 {
+            margin: 0;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .company {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 5px;
+        }
+
+        /* Interests */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .interest-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Achievements */
+        .achievement {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            text-align: left;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .service-card li {
+            margin: 0.5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 0.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .profile-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#profile" class="active">Profile</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#services">Services</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. Profile / Resume -->
+    <section id="profile">
+    <h2>Profile</h2>
+        <div class="profile-photo">
+    <img src="Dp.png" width="200" style="border-radius:50%;">
+        </div>
+
+        <div class="profile-info">
+                <h1>Mithilesh Kumar</h1>
+                <p style="color: #3498db; font-size: 1.2rem;">Email Deliverability Specialist | PowerMTA Infrastructure | Inbox Placement Optimization | ISP Reputation Management</p>
+                <p style="margin-top: 1rem;">
+                    Results-driven Email Deliverability Specialist with strong expertise in PowerMTA infrastructure, sender reputation management, and email authentication protocols (SPF, DKIM, DMARC). Proven track record of improving inbox placement, reducing bounce and complaint rates, and troubleshooting complex ISP delivery issues in high-volume email environments. Adept at analyzing SMTP logs, optimizing sending strategies, and implementing scalable deliverability solutions that enhance overall campaign performance. Passionate about continuously learning emerging technologies and proactively applying innovative approaches to strengthen email infrastructure, improve operational efficiency, and ensure consistent inbox delivery.
+                </p>
+                <div class="contact-info">
+                    <p>📧 mithilesha022@gmail.com</p>
+                    <p>📱 8340262278</p>
+                    <p>📍 Hyderabad, India</p>
+                    <p>🔗 https://www.linkedin.com/in/mithilesh-kumar-4961b0138/</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+<section id="architecture">
+<h2>Email Infrastructure Architecture</h2>
+<div class="card">
+<h3>High Volume Email Delivery Infrastructure</h3>
+<p>
+Designed and managed scalable email infrastructure capable of delivering
+millions of emails daily using PowerMTA, SMTP relays, and domain-based
+sending architecture.
+</p>
+<ul>
+<li>PowerMTA cluster configuration for high throughput email delivery</li>
+<li>Dedicated IP pools for marketing and transactional traffic</li>
+<li>Domain-based sending strategy to protect sender reputation</li>
+<li>SMTP relay and API-based campaign integrations</li>
+<li>Advanced throttling rules for Gmail, Outlook, Yahoo, and other ISPs</li>
+</ul>
+<h3>Infrastructure Flow</h3>
+<p>Application / CRM → SMTP API → PowerMTA → ISP Mail Servers → Inbox Delivery</p>
+</div>
+</section>
+
+    <!-- 2. Experience -->
+    <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Senior Email Deliverability Specialist</h3>
+                <span class="date">Mar 2025 – Present</span>
+            </div>
+            <p class="company">Karix Mobile Pvt Ltd, Hyderabad</p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                <li>Developed comprehensive onboarding documentation to streamline the client setup process, ensuring efficient integration of email sending infrastructure and faster campaign activation.</li>
+                <li>Created detailed Email Deliverability Guidelines and Best Practice documentation covering authentication standards, IP reputation management, and ISP compliance requirements.</li>
+                <li>Defined and standardized DNS authentication processes, including implementation and validation of SPF, DKIM, DMARC, and CNAME records to ensure secure and trusted email delivery.</li>
+                <li>Built automated DNS validation mechanisms to verify authentication records and domain configuration before enabling email traffic from new sending domains.</li>
+                <li>Established a structured escalation matrix to clearly define issue ownership, resolution workflows, and response timelines for deliverability incidents and operational tasks.</li>
+                <li>Implemented automated abuse complaint suppression mechanisms to proactively handle feedback loop complaints and prevent reputation degradation.</li>
+                <li>Stabilized overall IP reputation management by successfully whitelisting 50% of sending IPs and maintaining control over 95% of the total IP pool, significantly reducing blacklist incidents.</li>
+                <li>Defined clear use cases for dedicated vs shared IP pools, enabling optimized infrastructure usage and better reputation management across marketing and transactional email streams.</li>
+                <li>Improved overall email delivery performance by 10% through deliverability optimization, authentication improvements, and reputation monitoring strategies.</li>
+                <li>Led client onboarding activities, gathering requirements and guiding customers through account setup, DNS configuration, authentication setup, and deliverability best practices.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Previous Position Title</h3>
+                <span class="date">Mar 2019 – Dec 2021</span>
+            </div>
+            <p class="company">Previous Company, Location</p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                <li>Developed and implemented key strategies</li>
+                <li>Collaborated with cross-functional teams</li>
+                <li>Achieved recognition for outstanding performance</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3>Entry Level Position</h3>
+                <span class="date">Jun 2017 – Feb 2019</span>
+            </div>
+            <p class="company">First Company, Location</p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                <li>Learned foundational skills in the industry</li>
+                <li>Contributed to team projects and initiatives</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3. Area of Interest -->
+    <section id="interests">
+        <h2>Areas of Interest</h2>
+        <div class="interests-grid">
+            <div class="interest-card">
+                <div class="interest-icon">🤖</div>
+                <h3>Artificial Intelligence</h3>
+                <p>Machine learning, neural networks, and automation</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">☁️</div>
+                <h3>Cloud Computing</h3>
+                <p>AWS, Azure, and scalable architectures</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">🔒</div>
+                <h3>Cybersecurity</h3>
+                <p>Security protocols and risk management</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">📊</div>
+                <h3>Data Analytics</h3>
+                <p>Business intelligence and data visualization</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">🌐</div>
+                <h3>Web Development</h3>
+                <p>Modern frameworks and responsive design</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">📱</div>
+                <h3>Mobile Apps</h3>
+                <p>iOS, Android, and cross-platform development</p>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="casestudies">
+<h2>Deliverability Case Studies</h2>
+
+<div class="card">
+<h3>Case Study: Bounce Rate Reduction</h3>
+<p><b>Problem:</b> Campaign generated ~12% hard bounce rate causing domain reputation decline.</p>
+<p><b>Investigation:</b></p>
+<ul>
+<li>SMTP log analysis</li>
+<li>Domain authentication verification</li>
+<li>Email list validation</li>
+</ul>
+<p><b>Solution:</b></p>
+<ul>
+<li>Implemented email validation process</li>
+<li>Adjusted PowerMTA throttling rules</li>
+<li>Applied list hygiene strategy</li>
+</ul>
+<p><b>Result:</b></p>
+<ul>
+<li>Bounce rate reduced from 12% → below 2%</li>
+<li>Improved inbox placement</li>
+<li>Domain reputation stabilized</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Case Study: IP Reputation Recovery</h3>
+<p><b>Problem:</b> Sending IP flagged due to spam complaints and ISP filtering.</p>
+<p><b>Solution:</b></p>
+<ul>
+<li>Implemented controlled IP warm-up plan</li>
+<li>Segmented engaged recipients</li>
+<li>Reduced sending velocity</li>
+</ul>
+<p><b>Result:</b></p>
+<ul>
+<li>IP reputation restored</li>
+<li>Spam complaint rate reduced</li>
+<li>Inbox placement improved across Gmail & Outlook</li>
+</ul>
+</div>
+
+</section>
+
+<!-- 4. Master in Skills -->
+    
+<section id="powermta">
+<h2>PowerMTA Expertise</h2>
+<div class="card">
+<h3>PowerMTA Configuration</h3>
+<p>
+Extensive experience configuring and optimizing PowerMTA for high-volume
+email delivery environments.
+</p>
+<ul>
+<li>VMTA configuration and IP rotation strategy</li>
+<li>Queue management and bounce handling</li>
+<li>SMTP throttling rules based on ISP behavior</li>
+<li>Authentication integration (SPF, DKIM, DMARC)</li>
+<li>SMTP log analysis for deliverability troubleshooting</li>
+</ul>
+<h3>Example Configuration</h3>
+<pre>
+&lt;domain gmail.com&gt;
+max-msg-rate 100/M
+max-conn-rate 10/M
+retry-after 10m
+&lt;/domain&gt;
+</pre>
+</div>
+</section>
+
+<section id="skills">
+        <h2>Master in Skills</h2>
+        <div class="skills-grid">
+            <div class="card skill-category">
+                <h3>Technical Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Python</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>JavaScript</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>SQL / Databases</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Cloud Platforms</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card skill-category">
+                <h3>Professional Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Project Management</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Team Leadership</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Communication</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Problem Solving</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="monitoring">
+<h2>Deliverability Monitoring Process</h2>
+<div class="card">
+<h3>Daily Monitoring Checklist</h3>
+<ul>
+<li>Google Postmaster reputation monitoring</li>
+<li>Microsoft SNDS sender reputation monitoring</li>
+<li>Blacklist monitoring (Spamhaus, Barracuda, etc.)</li>
+<li>Bounce rate and complaint analysis</li>
+<li>SMTP response log analysis</li>
+<li>Domain authentication validation</li>
+</ul>
+
+<h3>Monitoring Tools</h3>
+<ul>
+<li>Google Postmaster Tools</li>
+<li>Microsoft SNDS</li>
+<li>MXToolbox</li>
+<li>Inbox placement monitoring tools</li>
+</ul>
+</div>
+</section>
+
+<!-- 5. Achievements -->
+    <section id="achievements">
+        <h2>Achievements</h2>
+
+        <div class="card achievement">
+            <div class="achievement-icon">🏆</div>
+            <div>
+                <h3>Award or Recognition Title</h3>
+                <p class="date">2023</p>
+                <p>Description of the achievement and its significance. Explain what you did and the impact it had.</p>
+            </div>
+        </div>
+
+        <div class="card achievement">
+            <div class="achievement-icon">📜</div>
+            <div>
+                <h3>Professional Certification</h3>
+                <p class="date">2022</p>
+                <p>Name of certification from issuing organization. Describe what skills this certification validates.</p>
+            </div>
+        </div>
+
+        <div class="card achievement">
+            <div class="achievement-icon">🎯</div>
+            <div>
+                <h3>Major Project Completion</h3>
+                <p class="date">2021</p>
+                <p>Successfully delivered a project that resulted in $X savings or Y% improvement for the client/company.</p>
+            </div>
+        </div>
+
+        <div class="card achievement">
+            <div class="achievement-icon">📝</div>
+            <div>
+                <h3>Publication or Speaking</h3>
+                <p class="date">2020</p>
+                <p>Published article in industry journal or presented at a conference on topic X.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Consultant Services -->
+    <section id="services">
+        <h2>Consultant Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Business Consulting</h3>
+                <p>Strategic planning and business optimization</p>
+                <ul>
+                    <li>Process improvement</li>
+                    <li>Digital transformation</li>
+                    <li>Growth strategy</li>
+                </ul>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Technical Consulting</h3>
+                <p>Technology solutions and implementation</p>
+                <ul>
+                    <li>System architecture</li>
+                    <li>Code review & optimization</li>
+                    <li>Technology selection</li>
+                </ul>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3>Training & Workshops</h3>
+                <p>Knowledge transfer and skill development</p>
+                <ul>
+                    <li>Team training sessions</li>
+                    <li>One-on-one mentoring</li>
+                    <li>Custom workshops</li>
+                </ul>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form" id="contact">
+            <h3 style="text-align: center; margin-bottom: 1.5rem;">Get in Touch</h3>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interested In</label>
+                    <select id="service" name="service">
+                        <option value="business">Business Consulting</option>
+                        <option value="technical">Technical Consulting</option>
+                        <option value="training">Training & Workshops</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Your Name. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="#">LinkedIn</a> | 
+            <a href="#">GitHub</a> | 
+            <a href="#">Twitter</a>
+        </p>
+    </footer>
+
+    <!-- Smooth Scrolling & Active Nav -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
