@@ -707,29 +707,75 @@ Pvt Ltd, Hyderabad</p>
 <!-- 4. Master in Skills -->
     
 <section id="powermta">
-<h2>PowerMTA Expertise</h2>
-<div class="card">
-<h3>PowerMTA Configuration</h3>
-<p>
-Extensive experience configuring and optimizing PowerMTA for high-volume
-email delivery environments.
-</p>
-<ul>
-<li>VMTA configuration and IP rotation strategy</li>
-<li>Queue management and bounce handling</li>
-<li>SMTP throttling rules based on ISP behavior</li>
-<li>Authentication integration (SPF, DKIM, DMARC)</li>
-<li>SMTP log analysis for deliverability troubleshooting</li>
-</ul>
-<h3>Example Configuration</h3>
-<pre>
+    <h2>PowerMTA Expertise</h2>
+
+    <div class="card">
+
+        <h3>High-Volume Email Infrastructure Design</h3>
+        <p>
+            Designed and optimized scalable email delivery architecture using PowerMTA,
+            enabling high-throughput sending with controlled IP rotation, domain segmentation,
+            and ISP-aware throttling strategies.
+        </p>
+
+        <ul>
+            <li>VMTA architecture with intelligent IP pool allocation (dedicated & shared)</li>
+            <li>Domain-based routing to isolate reputation and improve deliverability</li>
+            <li>ISP-specific throttling (Gmail, Outlook, Yahoo) to avoid rate limits</li>
+            <li>Queue optimization and retry logic tuning for faster delivery</li>
+        </ul>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Deliverability Optimization & Monitoring</h3>
+        <ul>
+            <li>Advanced SMTP log analysis to diagnose ISP filtering and delivery failures</li>
+            <li>Real-time monitoring of MTA queues, bounce patterns, and deferrals</li>
+            <li>Authentication alignment using SPF, DKIM, DMARC for domain trust</li>
+            <li>Feedback Loop (FBL) integration to reduce complaints and protect reputation</li>
+        </ul>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Infrastructure Flow</h3>
+        <pre>
+Application / CRM
+        ↓
+SMTP API / Relay
+        ↓
+PowerMTA (VMTA Pools + IP Rotation)
+        ↓
+ISP Servers (Gmail, Outlook, Yahoo)
+        ↓
+Inbox Placement
+        </pre>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Sample PowerMTA Configuration</h3>
+        <pre>
 &lt;domain gmail.com&gt;
 max-msg-rate 100/M
 max-conn-rate 10/M
 retry-after 10m
 &lt;/domain&gt;
-</pre>
-</div>
+        </pre>
+
+        <p style="font-size: 0.9rem; color: #555;">
+            Example of ISP-specific throttling to maintain reputation and avoid Gmail rate limiting.
+        </p>
+
+    </div>
+
 </section>
 
 <section id="skills">
