@@ -346,6 +346,36 @@
             }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+(function(){
+    emailjs.init("B6dAugex38ifJn8wO");
+})();
+
+function sendMail(e) {
+    e.preventDefault();
+
+    const params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        service: document.getElementById("service").value,
+        message: document.getElementById("message").value
+    };
+
+    emailjs.send("service_buibm8o", "template_1tekndi", params)
+    .then(function(res) {
+        document.getElementById("success-msg").style.display = "block";
+        document.getElementById("success-msg").style.color = "green";
+        document.getElementById("success-msg").innerText = "✅ Message sent successfully!";
+    })
+    .catch(function(err) {
+        document.getElementById("success-msg").style.display = "block";
+        document.getElementById("success-msg").style.color = "red";
+        document.getElementById("success-msg").innerText =
+            "❌ ERROR: " + err.text;
+    });
+}
+</script>
 </head>
 <body>
 
@@ -982,7 +1012,10 @@ retry-after 10m
             </div>
 
             <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-
+            <!-- Success Message -->
+            <p id="success-msg" style="display:none; color:green; margin-top:10px;">
+               ✅ Message sent successfully!
+            </p>
         </form>
     </div>
 </section>
