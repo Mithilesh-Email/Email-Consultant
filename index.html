@@ -1006,13 +1006,15 @@ retry-after 10m
 
             <div class="form-group">
                 <label for="service">Service Interested In</label>
-                <select id="service" name="service">
-                    <option>Email Deliverability Consulting</option>
-                    <option>Cold Email & B2B Outreach</option>
-                    <option>Marketing Email Optimization</option>
-                    <option>Email Infrastructure Setup</option>
-                    <option>Authentication & Compliance</option>
-                    <option>IP Reputation Recovery</option>
+                <select id="service" name="service" required>
+                <option value="" disabled selected>Select Service</option>
+                <option>Email Deliverability Consulting</option>
+                <option>Cold Email & B2B Outreach</option>
+                <option>Marketing Email Optimization</option>
+                <option>Email Infrastructure Setup</option>
+                <option>Authentication & Compliance</option>
+                <option>IP Reputation Recovery</option>
+            </select>
                 </select>
             </div>
 
